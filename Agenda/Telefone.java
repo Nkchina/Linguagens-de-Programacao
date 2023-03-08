@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Telefone {
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
-        Contato Contato = new Contato();
+        Contato contato1 = new Contato();
 
         System.out.print("Digite o nome do contato: ");
         String nome = ler.nextLine();
