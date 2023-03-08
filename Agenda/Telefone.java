@@ -22,7 +22,7 @@ public class Telefone {
         else{
             System.out.println("Contato adicionado!");
             System.out.println("Nome: " + nome);
-            System.out.println("Telefone: " + ddd + telefone);
+            System.out.println("Telefone: " +"(" + ddd + ")" + telefone);
         }
 
     }
