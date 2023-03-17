@@ -12,7 +12,7 @@ public class Pizza {
 
     public Double calcularValor(boolean possuiBorda) {
         if (possuiBorda) {
-            return valor + 5.00;
+            return valor + 5;
         }
         return valor;
     }
