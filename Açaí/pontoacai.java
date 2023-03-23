@@ -43,7 +43,7 @@ public class pontoacai{
         double valorFinal = acai1.calcularValor();
 
         JOptionPane.showMessageDialog(null,
-                "O seu açaí ficou no valor de: R$ " + String.format("%.2f", valorFinal),
+                "O seu açaí ficou no valor de: R$ " +  valorFinal,
                 "Valor do Açaí", JOptionPane.INFORMATION_MESSAGE);
     }
 }
