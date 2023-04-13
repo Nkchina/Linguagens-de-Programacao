@@ -16,14 +16,32 @@ public class Main {
         ArrayList<Ingrediente> ingredientesEscolhidos = new ArrayList<>();
         boolean continuarEscolhendoIngredientes = true;
         while (continuarEscolhendoIngredientes) {
-            String opcaoEscolhida = JOptionPane.showInputDialog(null, "Informe os ingredientes escolhidos:\n1-Bacon\n2-Mussarela\n3-Tomate\n4-Queijo\n5-Sair");
+               String opcaoEscolhida = JOptionPane.showInputDialog(null, "Informe os ingredientes escolhidos:" +
+                    "\n1-Bacon" +
+                    "\n2-Mussarela" +
+                    "\n3-Tomate" +
+                    "\n4-Queijo" +
+                    "\n5-Sair");
+
             switch (opcaoEscolhida) {
-                case "1" -> ingredientesEscolhidos.add(ingredientesDisponiveis.get(0));
-                case "2" -> ingredientesEscolhidos.add(ingredientesDisponiveis.get(1));
-                case "3" -> ingredientesEscolhidos.add(ingredientesDisponiveis.get(2));
-                case "4" -> ingredientesEscolhidos.add(ingredientesDisponiveis.get(3));
-                case "5" -> continuarEscolhendoIngredientes = false;
-                default -> JOptionPane.showMessageDialog(null, "Opção inválida.");
+                case "1":
+                    ingredientesEscolhidos.add(ingredientesDisponiveis.get(0));
+                    break;
+                case "2":
+                    ingredientesEscolhidos.add(ingredientesDisponiveis.get(1));
+                    break;
+                case "3":
+                    ingredientesEscolhidos.add(ingredientesDisponiveis.get(2));
+                    break;
+                case "4":
+                    ingredientesEscolhidos.add(ingredientesDisponiveis.get(3));
+                    break;
+                case "5":
+                    continuarEscolhendoIngredientes = false;
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Opção inválida.");
+                    break;
             }
         }
 
