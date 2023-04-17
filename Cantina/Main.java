@@ -1,53 +1,20 @@
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Ingrediente> ingredientesDisponiveis = new ArrayList<>();
-        ingredientesDisponiveis.add(new Ingrediente("Bacon"));
-        ingredientesDisponiveis.add(new Ingrediente("Mussarela"));
-        ingredientesDisponiveis.add(new Ingrediente("Tomate"));
-        ingredientesDisponiveis.add(new Ingrediente("Queijo"));
+        Pedido p = new Pedido();
+        String nome,massa;
+        double valor;
 
-        String nomeCliente = JOptionPane.showInputDialog(null, "Informe o nome do cliente:");
-        String nomeMassa = JOptionPane.showInputDialog(null, "Informe o nome da massa:");
-        double valorMassa = Double.parseDouble(JOptionPane.showInputDialog(null, "Informe o valor da massa:"));
+        nome = JOptionPane.showInputDialog("Informe o nome do Cliente: ");
+        p.cliente.setNome(nome);
+        massa = JOptionPane.showInputDialog("Informe o nome da massa: ");
+        p.massa.setTipo(massa);
+        valor = Double.parseDouble(JOptionPane.showInputDialog("Informe o valor da Massa: "));
+        p.massa.setValor(valor);
 
-        ArrayList<Ingrediente> ingredientesEscolhidos = new ArrayList<>();
-        boolean continuarEscolhendoIngredientes = true;
-        while (continuarEscolhendoIngredientes) {
-               String opcaoEscolhida = JOptionPane.showInputDialog(null, "Informe os ingredientes escolhidos:" +
-                    "\n1-Bacon" +
-                    "\n2-Mussarela" +
-                    "\n3-Tomate" +
-                    "\n4-Queijo" +
-                    "\n5-Sair");
+        String opcao;
+        int finalizar=0;
 
-            switch (opcaoEscolhida) {
-                case "1":
-                    ingredientesEscolhidos.add(ingredientesDisponiveis.get(0));
-                    break;
-                case "2":
-                    ingredientesEscolhidos.add(ingredientesDisponiveis.get(1));
-                    break;
-                case "3":
-                    ingredientesEscolhidos.add(ingredientesDisponiveis.get(2));
-                    break;
-                case "4":
-                    ingredientesEscolhidos.add(ingredientesDisponiveis.get(3));
-                    break;
-                case "5":
-                    continuarEscolhendoIngredientes = false;
-                    break;
-                default:
-                    JOptionPane.showMessageDialog(null, "Opção inválida.");
-                    break;
-            }
-        }
-
-        Massa massa = new Massa(nomeMassa, valorMassa);
-        Cliente cliente = new Cliente(nomeCliente);
-        Pedido pedido = new Pedido(massa, cliente, ingredientesEscolhidos);
-        JOptionPane.showMessageDialog(null, pedido.getDescricaoPedido());
     }
 }
