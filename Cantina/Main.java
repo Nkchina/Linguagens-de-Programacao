@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-public class Cantina {
+public class Main {
     public static void main(String[] args) {
         String nomeCliente = JOptionPane.showInputDialog("Informe o nome do cliente:");
 
